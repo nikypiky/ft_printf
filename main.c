@@ -4,12 +4,11 @@
 
 int	main(void)
 {
-	/* char	c = 'a'; */
-	/* write(1, &c, 1); */
+	//char	c = 'a';
+	//write(1, &c, 1);
 	/* char test[] = "test"; */
 	//printf("hello %s test", test); 
-	/* ft_printf("%s %c %% %f", test, 'c'); */
-	printf("%i", 12);
+	 ft_printf("%s %c %s", "hello", 'x', "world" ); 
 }
 
 

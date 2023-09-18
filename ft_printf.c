@@ -3,12 +3,12 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-void	func_search(char c, void *str, void *ints)
+void	func_search(char c, char *str, void *ints)
 {
 	if (c == 'c')
-		write(1, str, 1);
+		write(1, ints, 1);
 	else if (c == 's')
-		ft_putstr((char *)ints);
+		ft_putstr((char *)str);
 }
 
 int	ft_printf(const char *str , ...)
@@ -20,19 +20,20 @@ int	ft_printf(const char *str , ...)
     va_start(args, str);
     while(*str)
     {
-        if(*str == '%')
+        while(*str == '%')
         {
-			str++;
-			if (NULL != ft_memchr("cdiuxX", *str, 6))
+			if (NULL != ft_memchr("cdiuxX", *(str + 1), 6))
 				c = va_arg(args, int);
-			else if(NULL != ft_memchr("sp", *str, 2))
+			else if(NULL != ft_memchr("sp", *(str + 1), 2))
 				ptr = va_arg(args, char *);
-			else if(*str + 1 == '%')
+			func_search(*(str + 1), ptr, &c);
+			if(*(str + 1) == '%')
 				write(1, "%", 1);
-			func_search(*str, ptr, &c);
+			str += 2;
         }
 		write(1, str, 1);
-        str++;
+		if (*str)
+			str++;
 	}
 	va_end(args);
 	return (1);
