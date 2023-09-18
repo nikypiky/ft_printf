@@ -8,7 +8,7 @@ int	main(void)
 	//write(1, &c, 1);
 	/* char test[] = "test"; */
 	//printf("hello %s test", test); 
-	 ft_printf("%s %c %s", "hello", 'x', "world" ); 
+	 ft_printf("%s %c %d", "hello", 'x', 12 ); 
 }
 
 

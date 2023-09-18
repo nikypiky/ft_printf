@@ -1,9 +1,10 @@
 Library		= libftprintf
 
 files 	   = ft_printf \
-			ft_putstr \
+			 ft_putstr \
+			 ft_putdec \
 			
-Compiler	= gcc
+Compiler	= cc
 
 CmpFlags	= -Wall -Wextra -Werror
 
@@ -36,3 +37,4 @@ run:
 	@echo
 
 .PHONY: all, clean, fclean, re, run
+

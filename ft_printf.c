@@ -9,6 +9,8 @@ void	func_search(char c, char *str, void *ints)
 		write(1, ints, 1);
 	else if (c == 's')
 		ft_putstr((char *)str);
+	else if (c == 'd')
+		ft_putdec(ints);
 }
 
 int	ft_printf(const char *str , ...)
