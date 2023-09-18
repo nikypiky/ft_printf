@@ -22,13 +22,14 @@ int	ft_printf(const char *str , ...)
     {
         if(*str == '%')
         {
-			if (ft_memchr("cdiuxX", *str + 1, 6))
+			str++;
+			if (NULL != ft_memchr("cdiuxX", *str, 6))
 				c = va_arg(args, int);
-			else if(ft_memchr("sp", *str + 1, 2))
+			else if(NULL != ft_memchr("sp", *str, 2))
 				ptr = va_arg(args, char *);
 			else if(*str + 1 == '%')
 				write(1, "%", 1);
-			func_search(*str + 1, ptr, &c);
+			func_search(*str, ptr, &c);
         }
 		write(1, str, 1);
         str++;

@@ -6,6 +6,10 @@ int	main(void)
 {
 	/* char	c = 'a'; */
 	/* write(1, &c, 1); */
-	/* ft_printf("hello %s test", "world"); */
-	printf("%s %c %% %f", "test", 'c');
+	/* char test[] = "test"; */
+	//printf("hello %s test", test); 
+	/* ft_printf("%s %c %% %f", test, 'c'); */
+	printf("%i", 12);
 }
+
+
