@@ -4,9 +4,10 @@
 # include "libftprintf.h" 
 # include <stdlib.h>
 # include <unistd.h>
+# include "../libft.h"
 
 int		ft_printf(const char * str, ...);
 void	ft_putstr(char *str);
-void	ft_putdec(int *nbr);
+void	ft_putdec(int *n);
 
 #endif
