@@ -6,6 +6,6 @@ int	main(void)
 {
 	/* char	c = 'a'; */
 	/* write(1, &c, 1); */
-	ft_printf("hello %ctest", 'x');
-
+	/* ft_printf("hello %s test", "world"); */
+	printf("%s %c %% %f", "test", 'c');
 }

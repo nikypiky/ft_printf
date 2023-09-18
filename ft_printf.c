@@ -3,29 +3,32 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-void	func_search(char c, void *var)
+void	func_search(char c, void *str, void *ints)
 {
 	if (c == 'c')
-		write(1, var, 1);
-	//else if (c == 's')
-	//	ft_putstr((char *)var);
+		write(1, str, 1);
+	else if (c == 's')
+		ft_putstr((char *)ints);
 }
 
 int	ft_printf(const char *str , ...)
 {
 	va_list args;
 	int		c;
+	char	*ptr;
 
     va_start(args, str);
     while(*str)
     {
         if(*str == '%')
         {
-			c = va_arg(args, int);
-            func_search(*(str + 1), &c);
-			printf("%c ", c);
-			printf("%ld", ft_strlen("help"));
-            str += 2;
+			if (ft_memchr("cdiuxX", *str + 1, 6))
+				c = va_arg(args, int);
+			else if(ft_memchr("sp", *str + 1, 2))
+				ptr = va_arg(args, char *);
+			else if(*str + 1 == '%')
+				write(1, "%", 1);
+			func_search(*str + 1, ptr, &c);
         }
 		write(1, str, 1);
         str++;
