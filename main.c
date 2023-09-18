@@ -4,11 +4,8 @@
 
 int	main(void)
 {
-	char *str;
-	str = ft_strdup("hello % test");
-	while (*str)
-	{
-		write(1, str, 1);
-		str++;
-	}
+	/* char	c = 'a'; */
+	/* write(1, &c, 1); */
+	ft_printf("hello %ctest", 'x');
+
 }

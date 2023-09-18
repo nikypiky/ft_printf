@@ -1,6 +1,7 @@
 Library		= libftprintf
 
 files 	   = ft_printf \
+			ft_putstr \
 			
 Compiler	= gcc
 
@@ -14,13 +15,11 @@ OFILES	= $(files:%=%.o)
 
 NAME	= $(OUTN)
 
-LIBFT_DIR = ../libft
-
 all: $(NAME) run
 
-$(NAME): 
-	@$(Compiler) $(CmpFlags) -c $(CFILES) -o $(OFILES) 
-	@ar -rc $(OUTN) $(OFILES) 
+$(NAME):
+	@$(Compiler) $(CmpFlags) -c $(CFILES) -g -I./
+	@ar -rc $(OUTN) $(OFILES) $(OBONUS)
 
 clean:
 	@rm -f *.o
@@ -32,9 +31,8 @@ re: fclean all
 
 run:
 	@cc $(CmpFlags) -c main.c -o main.o 
-	@cc $(CmpFlags) -o main main.o libftprintf.a libft.a
+	@cc $(CmpFlags) -o main main.o libftprintf.a libft.a -g
 	@./main
 	@echo
 
 .PHONY: all, clean, fclean, re, run
-
