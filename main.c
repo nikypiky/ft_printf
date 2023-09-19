@@ -10,7 +10,7 @@ int	main(void)
 	unsigned int i = -123;
 	/* ft_putdec((unsigned int)i); */
 	/* printf(" %u %i", i, i); */
-	ft_printf("i = %i u = %u", i, i); 
+	ft_printf("i = %i u = %u x = %x X = %X %%", i, i, i, i); 
 }
 
 

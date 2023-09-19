@@ -15,6 +15,10 @@ void	func_search(char c, char *str, void *ints)
 		ft_putnbr_base(*(int *)ints, "0123456789");
 	else if (c == 'u')
 		ft_unsigned_putdec(*(unsigned int *)ints);
+	else if (c == 'x')
+		ft_putnbr_base(*(int *)ints, "0123456789abcdef");
+	else if	(c == 'X')
+		ft_putnbr_base(*(int *)ints, "0123456789ABCDEF");
 }
 
 int	ft_printf(const char *str , ...)
