@@ -1,14 +1,12 @@
 #include "libftprintf.h"
 
-int	putnbr_digit_nbr(int nbr)
+int	putnbr_digit_unsigned_nbr(unsigned int nbr)
 {
 	int	str;
 
 	str = 0;
 	if (nbr == 0)
 		return (1);
-	if (nbr < 0)
-		str++;
 	while (nbr)
 	{
 		nbr /= 10;
@@ -17,21 +15,14 @@ int	putnbr_digit_nbr(int nbr)
 	return (str);
 }
 
-void	ft_putdec(int n)
+void	ft_unsigned_putdec(unsigned int n)
 {
-	//x
 	char			string[12];
 	unsigned int	nbr;
 	unsigned int	str;
 
-	str = putnbr_digit_nbr(n);
-	if (n < 0)
-	{
-		string[0] = '-';
-		nbr = -n;
-	}
-	else
-		nbr = n;
+	nbr = (unsigned int)n;
+	str = putnbr_digit_unsigned_nbr(n);
 	if (nbr == 0)
 		string[0] = '0';
 	string[str] = '\0';

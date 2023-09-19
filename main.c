@@ -7,9 +7,10 @@ int	main(void)
 	//char	c = 'a';
 	//write(1, &c, 1);
 	/* char test[] = "test"; */
-	//printf("hello %s test", test); 
-	 ft_printf("d = %d i = %i", 3456, 124); 
-	/* ft_putnbr_base(13, "01"); */
+	unsigned int i = -123;
+	/* ft_putdec((unsigned int)i); */
+	/* printf(" %u %i", i, i); */
+	ft_printf("i = %i u = %u", i, i); 
 }
 
 

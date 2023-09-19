@@ -13,6 +13,8 @@ void	func_search(char c, char *str, void *ints)
 		ft_putdec(*(int *)ints);
 	else if (c == 'i')
 		ft_putnbr_base(*(int *)ints, "0123456789");
+	else if (c == 'u')
+		ft_unsigned_putdec(*(unsigned int *)ints);
 }
 
 int	ft_printf(const char *str , ...)
