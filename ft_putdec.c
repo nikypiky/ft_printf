@@ -17,20 +17,20 @@ int	putnbr_digit_nbr(int nbr)
 	return (str);
 }
 
-void	ft_putdec(int *n)
+void	ft_putdec(int n)
 {
 	char			string[12];
 	unsigned int	nbr;
 	unsigned int	str;
 
-	str = putnbr_digit_nbr(*n);
-	if (*n < 0)
+	str = putnbr_digit_nbr(n);
+	if (n < 0)
 	{
 		string[0] = '-';
-		nbr = -*n;
+		nbr = -n;
 	}
 	else
-		nbr = *n;
+		nbr = n;
 	if (nbr == 0)
 		string[0] = '0';
 	string[str] = '\0';

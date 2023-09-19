@@ -8,7 +8,8 @@ int	main(void)
 	//write(1, &c, 1);
 	/* char test[] = "test"; */
 	//printf("hello %s test", test); 
-	 ft_printf("%s %c %d", "hello", 'x', 12 ); 
+	 ft_printf("d = %d i = %i", 3456, 124); 
+	/* ft_putnbr_base(13, "01"); */
 }
 
 

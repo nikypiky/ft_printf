@@ -10,7 +10,9 @@ void	func_search(char c, char *str, void *ints)
 	else if (c == 's')
 		ft_putstr((char *)str);
 	else if (c == 'd')
-		ft_putdec(ints);
+		ft_putdec(*(int *)ints);
+	else if (c == 'i')
+		ft_putnbr_base(*(int *)ints, "0123456789");
 }
 
 int	ft_printf(const char *str , ...)

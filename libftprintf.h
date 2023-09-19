@@ -8,6 +8,7 @@
 
 int		ft_printf(const char * str, ...);
 void	ft_putstr(char *str);
-void	ft_putdec(int *n);
+void	ft_putdec(int n);
+void	ft_putnbr_base(int nbr, char *base);
 
 #endif

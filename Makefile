@@ -3,6 +3,7 @@ Library		= libftprintf
 files 	   = ft_printf \
 			 ft_putstr \
 			 ft_putdec \
+			 ft_putnbr_base 
 			
 Compiler	= cc
 
