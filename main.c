@@ -4,12 +4,11 @@
 
 int	main(void)
 {
-	int a = 1;
-	/* long int *b = &a; */
-	void *c = &a;
-	/* printf("%p", c); */
-	ft_printf(("%c, %s, %p, %d, %i, %u, %x, %X, %%\n"), 'c', "hello", c, a, 11, 12, 123, 123);
-	printf(("%c, %s, %p, %d, %i, %u, %x, %X, %%"), 'c', "hello", c, a, 11, 12, 123, 123);
+	int x;
+	int y;
+	x = ft_printf("hel%c", 'a');
+	y = printf("hel%i", 'a');
+	ft_printf("\n x = %i y = %i ", x, y, '\0');
 }
 
 

@@ -19,7 +19,6 @@ int	putnbr_digit_nbr(int nbr)
 
 void	ft_putdec(int n)
 {
-	//x
 	char			string[12];
 	unsigned int	nbr;
 	unsigned int	str;

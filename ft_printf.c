@@ -3,7 +3,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-void	func_search(char c, char *ptr, void *ints)
+void	func_search(char c, char *ptr, void *ints, int *pi)
 {
 	if (c == 'c')
 		write(1, ints, 1);
@@ -28,12 +28,34 @@ void	func_search(char c, char *ptr, void *ints)
 		write(1, "%", 1);
 }
 
+int	printf_len(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (*str)
+	{
+		while (*str == '%')
+			str += 2;
+		if (*str)
+		{
+			i++;
+			str++;
+		}
+	}
+	return (i);
+}
+
 int	ft_printf(const char *str , ...)
 {
 	va_list args;
 	int		c;
 	void	*ptr;
+	int		i;
+	int		*pi;
 
+	i = printf_len(str);
+	pi = &i;
     va_start(args, str);
     while(*str)
     {
@@ -43,16 +65,14 @@ int	ft_printf(const char *str , ...)
 				c = va_arg(args, int);
 			else if(NULL != ft_memchr("sp", *(str + 1), 2))
 				ptr = va_arg(args, void *);
-			func_search(*(str + 1), ptr, &c);
-			/* if(*(str + 1) == '%') */
-			/* 	write(1, "%", 1); */
+			func_search(*(str + 1), ptr, &c, &pi);
 			str += 2;
         }
-		write(1, str, 1);
+		if (*str)
+			write(1, str, 1);
 		if (*str)
 			str++;
 	}
-	va_end(args);
-	return (1);
+	return (i);
 }
 

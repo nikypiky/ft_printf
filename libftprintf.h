@@ -1,7 +1,6 @@
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
 
-# include "libftprintf.h" 
 # include <stdlib.h>
 # include <unistd.h>
 # include "../libft.h"
