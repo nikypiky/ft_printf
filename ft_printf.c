@@ -12,7 +12,7 @@ void	func_search(char c, char *ptr, void *ints)
 	else if (c == 'p')
 	{
 		write(1, "0x", 2);
-		ft_putlong_base(*(long unsigned int *)ptr, "0123456789abcdef");
+		ft_putlong_base((long unsigned int)ptr, "0123456789abcdef");
 	}
 	else if (c == 'd')
 		ft_putdec(*(int *)ints);
@@ -24,6 +24,8 @@ void	func_search(char c, char *ptr, void *ints)
 		ft_putnbr_base(*(int *)ints, "0123456789abcdef");
 	else if	(c == 'X')
 		ft_putnbr_base(*(int *)ints, "0123456789ABCDEF");
+	else if (c == '%')
+		write(1, "%", 1);
 }
 
 int	ft_printf(const char *str , ...)
@@ -42,8 +44,8 @@ int	ft_printf(const char *str , ...)
 			else if(NULL != ft_memchr("sp", *(str + 1), 2))
 				ptr = va_arg(args, void *);
 			func_search(*(str + 1), ptr, &c);
-			if(*(str + 1) == '%')
-				write(1, "%", 1);
+			/* if(*(str + 1) == '%') */
+			/* 	write(1, "%", 1); */
 			str += 2;
         }
 		write(1, str, 1);
