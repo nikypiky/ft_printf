@@ -36,7 +36,7 @@ void	ft_putlong_base(unsigned long nbr, char *base)
 	n = (nbr % l);
 	nbr = nbr / l;
 	if (nbr > 0)
-		ft_putnbr_base(nbr, base);
+		ft_putlong_base(nbr, base);
 	write (1, &base[n], 1);
 }
 

@@ -8,8 +8,8 @@ int	main(void)
 	/* long int *b = &a; */
 	void *c = &a;
 	/* printf("%p", c); */
-	/* ft_printf(" %p %p ", c, b); */
-	ft_putlong_base(&c, "01");
+	printf(" %p ", c);
+	/* ft_putlong_base((unsigned long)c, "0123456789abcdef"); */
 }
 
 

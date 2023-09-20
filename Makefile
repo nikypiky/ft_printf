@@ -34,7 +34,7 @@ fclean: clean
 re: fclean all
 
 run:
-	@cc $(CmpFlags) -c main.c -o main.o 
+	@cc $(CmpFlags) -c main.c -o main.o -g
 	@cc $(CmpFlags) -o main main.o libftprintf.a libft.a -g
 	@./main
 	@echo

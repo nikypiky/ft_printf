@@ -10,7 +10,10 @@ void	func_search(char c, char *ptr, void *ints)
 	else if (c == 's')
 		ft_putstr((char *)ptr);
 	else if (c == 'p')
+	{
+		write(1, "0x", 2);
 		ft_putlong_base(*(long unsigned int *)ptr, "0123456789abcdef");
+	}
 	else if (c == 'd')
 		ft_putdec(*(int *)ints);
 	else if (c == 'i')
