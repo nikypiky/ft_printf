@@ -3,12 +3,14 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-void	func_search(char c, char *str, void *ints)
+void	func_search(char c, char *ptr, void *ints)
 {
 	if (c == 'c')
 		write(1, ints, 1);
 	else if (c == 's')
-		ft_putstr((char *)str);
+		ft_putstr((char *)ptr);
+	else if (c == 'p')
+		ft_putlong_base(*(long unsigned int *)ptr, "0123456789abcdef");
 	else if (c == 'd')
 		ft_putdec(*(int *)ints);
 	else if (c == 'i')
@@ -25,7 +27,7 @@ int	ft_printf(const char *str , ...)
 {
 	va_list args;
 	int		c;
-	char	*ptr;
+	void	*ptr;
 
     va_start(args, str);
     while(*str)
@@ -35,7 +37,7 @@ int	ft_printf(const char *str , ...)
 			if (NULL != ft_memchr("cdiuxX", *(str + 1), 6))
 				c = va_arg(args, int);
 			else if(NULL != ft_memchr("sp", *(str + 1), 2))
-				ptr = va_arg(args, char *);
+				ptr = va_arg(args, void *);
 			func_search(*(str + 1), ptr, &c);
 			if(*(str + 1) == '%')
 				write(1, "%", 1);

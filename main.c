@@ -4,13 +4,12 @@
 
 int	main(void)
 {
-	//char	c = 'a';
-	//write(1, &c, 1);
-	/* char test[] = "test"; */
-	unsigned int i = -123;
-	/* ft_putdec((unsigned int)i); */
-	/* printf(" %u %i", i, i); */
-	ft_printf("i = %i u = %u x = %x X = %X %%", i, i, i, i); 
+	long int a = 1;
+	/* long int *b = &a; */
+	void *c = &a;
+	/* printf("%p", c); */
+	/* ft_printf(" %p %p ", c, b); */
+	ft_putlong_base(&c, "01");
 }
 
 
