@@ -5,7 +5,7 @@
 # include <unistd.h>
 # include "../libft.h"
 
-int		ft_printf(const char * str, ...);
+int		ft_printf(const char *str, ...);
 void	ft_putstr(char *str, int *pi);
 void	ft_putdec(int n, int *pi);
 void	ft_putnbr_base(int nbr, char *base, int *pi);

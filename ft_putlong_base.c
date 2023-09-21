@@ -40,5 +40,3 @@ void	ft_putlong_base(unsigned long nbr, char *base, int *pi)
 	write (1, &base[n], 1);
 	(*pi)++;
 }
-
-

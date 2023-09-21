@@ -19,7 +19,7 @@ void	func_search(char c, char *ptr, void *ints, int *pi)
 		ft_unsigned_putdec(*(unsigned int *)ints, pi);
 	else if (c == 'x')
 		ft_putunsi_base(*(unsigned int *)ints, "0123456789abcdef", pi);
-	else if	(c == 'X')
+	else if (c == 'X')
 		ft_putunsi_base(*(unsigned int *)ints, "0123456789ABCDEF", pi);
 	else if (c == '%')
 		write(1, "%", 1);
@@ -45,9 +45,15 @@ int	printf_len(const char *str)
 	return (i);
 }
 
-int	ft_printf(const char *str , ...)
+void	write_printf(const char *str, const char **ptr)
 {
-	va_list args;
+	write(1, str, 1);
+	(*ptr)++;
+}
+
+int	ft_printf(const char *str, ...)
+{
+	va_list	args;
 	int		c;
 	void	*ptr;
 	int		i;
@@ -55,23 +61,20 @@ int	ft_printf(const char *str , ...)
 
 	i = printf_len(str);
 	pi = &i;
-    va_start(args, str);
-    while(*str)
-    {
-        while(*str == '%')
-        {
+	va_start(args, str);
+	while (*str)
+	{
+		while (*str == '%')
+		{
 			if (NULL != ft_memchr("cdiuxX", *(str + 1), 6))
 				c = va_arg(args, int);
-			else if(NULL != ft_memchr("sp", *(str + 1), 2))
+			else if (NULL != ft_memchr("sp", *(str + 1), 2))
 				ptr = va_arg(args, void *);
 			func_search(*(str + 1), ptr, &c, pi);
 			str += 2;
-        }
+		}
 		if (*str)
-			write(1, str, 1);
-		if (*str)
-			str++;
+			write_printf(str, &str);
 	}
 	return (i);
 }
-

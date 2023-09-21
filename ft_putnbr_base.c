@@ -58,5 +58,3 @@ void	ft_putnbr_base(int nbr, char *base, int *pi)
 	write (1, &base[n], 1);
 	(*pi)++;
 }
-
-

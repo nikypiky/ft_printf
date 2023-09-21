@@ -1,12 +1,12 @@
 #include "libftprintf.h"
 
-void ft_putstr (char *str, int *pi)
+void	ft_putstr(char *str, int *pi)
 {
 	if (str == NULL)
 	{
 		write (1, "(null)", 6);
 		*pi += 6;
-		return;
+		return ;
 	}
 	while (*str)
 	{
