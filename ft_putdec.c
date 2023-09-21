@@ -17,26 +17,12 @@ int	putnbr_digit_nbr(int nbr)
 	return (str);
 }
 
-/* int	putdec_min(int n, int *pi) */
-/* { */
-/* 	if (n == -2147483648) */
-/* 	{ */
-/* 		write(1, "-2147483648", 12); */
-/* 		*pi += 11; */
-/* 		return (1); */
-/* 	} */
-/* 	else */
-/* 		return (0); */
-/* } */
-
 void	ft_putdec(int n, int *pi)
 {
 	char			string[12];
 	unsigned int	nbr;
 	unsigned int	str;
 
-	/* if (putdec_min((int)n, pi) == 1) */
-	/* 	return; */
 	str = putnbr_digit_nbr(n);
 	if (n < 0)
 	{

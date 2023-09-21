@@ -18,9 +18,9 @@ void	func_search(char c, char *ptr, void *ints, int *pi)
 	else if (c == 'u')
 		ft_unsigned_putdec(*(unsigned int *)ints, pi);
 	else if (c == 'x')
-		ft_putlong_base(*(long unsigned int *)ints, "0123456789abcdef", pi);
+		ft_putunsi_base(*(unsigned int *)ints, "0123456789abcdef", pi);
 	else if	(c == 'X')
-		ft_putlong_base(*(long unsigned int *)ints, "0123456789ABCDEF", pi);
+		ft_putunsi_base(*(unsigned int *)ints, "0123456789ABCDEF", pi);
 	else if (c == '%')
 		write(1, "%", 1);
 	if (c == 'c' || c == '%')

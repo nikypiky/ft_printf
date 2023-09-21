@@ -12,5 +12,6 @@ void	ft_putnbr_base(int nbr, char *base, int *pi);
 void	ft_unsigned_putdec(unsigned int n, int *pi);
 void	ft_putlong_base(unsigned long u, char *base, int *pi);
 void	ft_putptr(char *ptr, int *pi);
+void	ft_putunsi_base(unsigned int nbr, char *base, int *pi);
 
 #endif
