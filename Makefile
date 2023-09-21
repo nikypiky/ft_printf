@@ -5,7 +5,8 @@ files 	   = ft_printf \
 			 ft_putdec \
 			 ft_putnbr_base \
 			 ft_putlong_base \
-			 ft_unsigned_putdec
+			 ft_unsigned_putdec \
+			 ft_putptr \
 			
 Compiler	= cc
 

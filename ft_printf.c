@@ -1,4 +1,4 @@
-#include "/home/nik/42-core/libft.h"
+/* #include "/home/nik/42-core/libft.h" */
 #include "libftprintf.h"
 #include <stdarg.h>
 #include <stdio.h>
@@ -8,24 +8,23 @@ void	func_search(char c, char *ptr, void *ints, int *pi)
 	if (c == 'c')
 		write(1, ints, 1);
 	else if (c == 's')
-		ft_putstr((char *)ptr);
+		ft_putstr((char *)ptr, pi);
 	else if (c == 'p')
-	{
-		write(1, "0x", 2);
-		ft_putlong_base((long unsigned int)ptr, "0123456789abcdef");
-	}
+		ft_putptr(ptr, pi);
 	else if (c == 'd')
-		ft_putdec(*(int *)ints);
+		ft_putdec(*(int *)ints, pi);
 	else if (c == 'i')
-		ft_putnbr_base(*(int *)ints, "0123456789");
+		ft_putnbr_base(*(int *)ints, "0123456789", pi);
 	else if (c == 'u')
-		ft_unsigned_putdec(*(unsigned int *)ints);
+		ft_unsigned_putdec(*(unsigned int *)ints, pi);
 	else if (c == 'x')
-		ft_putnbr_base(*(int *)ints, "0123456789abcdef");
+		ft_putlong_base(*(long unsigned int *)ints, "0123456789abcdef", pi);
 	else if	(c == 'X')
-		ft_putnbr_base(*(int *)ints, "0123456789ABCDEF");
+		ft_putlong_base(*(long unsigned int *)ints, "0123456789ABCDEF", pi);
 	else if (c == '%')
 		write(1, "%", 1);
+	if (c == 'c' || c == '%')
+		(*pi)++;
 }
 
 int	printf_len(const char *str)
@@ -65,7 +64,7 @@ int	ft_printf(const char *str , ...)
 				c = va_arg(args, int);
 			else if(NULL != ft_memchr("sp", *(str + 1), 2))
 				ptr = va_arg(args, void *);
-			func_search(*(str + 1), ptr, &c, &pi);
+			func_search(*(str + 1), ptr, &c, pi);
 			str += 2;
         }
 		if (*str)

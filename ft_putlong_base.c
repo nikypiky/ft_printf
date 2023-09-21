@@ -25,7 +25,7 @@ int	is_invalid_long(char *base)
 	return (1);
 }
 
-void	ft_putlong_base(unsigned long nbr, char *base)
+void	ft_putlong_base(unsigned long nbr, char *base, int *pi)
 {
 	unsigned long	n;
 	unsigned long	l;
@@ -36,8 +36,9 @@ void	ft_putlong_base(unsigned long nbr, char *base)
 	n = (nbr % l);
 	nbr = nbr / l;
 	if (nbr > 0)
-		ft_putlong_base(nbr, base);
+		ft_putlong_base(nbr, base, pi);
 	write (1, &base[n], 1);
+	(*pi)++;
 }
 
 

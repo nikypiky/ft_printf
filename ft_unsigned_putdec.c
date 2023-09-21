@@ -15,7 +15,7 @@ int	putnbr_digit_unsigned_nbr(unsigned int nbr)
 	return (str);
 }
 
-void	ft_unsigned_putdec(unsigned int n)
+void	ft_unsigned_putdec(unsigned int n, int *pi)
 {
 	char			string[12];
 	unsigned int	nbr;
@@ -33,4 +33,5 @@ void	ft_unsigned_putdec(unsigned int n)
 		str--;
 	}
 	write(1, string, ft_strlen(string));
+	*pi += ft_strlen(string);
 }
