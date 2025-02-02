@@ -39,10 +39,10 @@ This project was built to deepen my understanding of:
 
 ## Compilation
 
-To compile the project:
+To compile and run the project:
 
 ```sh
-gcc -Wall -Wextra -Werror ft_printf.c libftprintf.a -o test_printf
+make run
 ```
 
 ## Notes
