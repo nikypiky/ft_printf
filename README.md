@@ -49,6 +49,3 @@ make
 
 This project was originally developed as part of the 42 school system but has been improved independently. The repository contains additional helper functions for handling string formatting.
 
-## License
-
-This project is open-source and free to use.
