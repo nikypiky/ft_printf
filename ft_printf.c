@@ -1,4 +1,3 @@
-/* #include "/home/nik/42-core/libft.h" */
 #include "libftprintf.h"
 #include <stdarg.h>
 #include <stdio.h>
