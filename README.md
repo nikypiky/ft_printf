@@ -42,7 +42,7 @@ This project was built to deepen my understanding of:
 To compile and run the project:
 
 ```sh
-make run
+make
 ```
 
 ## Notes
